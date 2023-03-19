@@ -32,7 +32,7 @@ npm install
 
 Please download it from [here](https://drive.google.com/file/d/1quWgaU7-QiLQ8TNGuGnTJPFsGf4um0pK/view?usp=share_link) and extract it to `data/dvf_png`.
 
-The dataset is the same as that used in [DeepVecFont](https://github.com/yizhiwang96/deepvecfont), a subset from [SVG-VAE](https://github.com/magenta/magenta/tree/main/magenta/models/svg_vae).  But because some of the font's lowercase letters were not fully contained by the image, we re-rendered them to images with a resolution of 1536*1024. The training data required for [Multi-Implicits](https://github.com/preddy5/multi_implicit_fonts) is also included.
+The dataset is the same as that used in [DeepVecFont](https://github.com/yizhiwang96/deepvecfont), a subset from [SVG-VAE](https://github.com/magenta/magenta/tree/main/magenta/models/svg_vae).  But because some of the fonts' lowercase letters are not fully contained by the images, we re-render them to images with a resolution of 1536*1024. The training data required for [Multi-Implicits](https://github.com/preddy5/multi_implicit_fonts) is also included.
 
 ## Run
 
