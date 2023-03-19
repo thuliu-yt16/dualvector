@@ -1,0 +1,121 @@
+train_dataset:
+  dataset:
+    name: deepvecfont-sdf
+    args:
+      data_root: ./data/dvf_png/font_pngs/train
+      img_res: 128
+      coor_res: 256
+      n_samples: 4096
+      full: true
+      sample_inside: true
+      char_list: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51]
+      include_lower_case: true
+      occ: true
+      use_cache: false
+      valid_list: ./data/dvf_png/train_valid.txt
+  batch_size: 16
+  shuffle: true
+
+val_dataset:
+  dataset:
+    name: deepvecfont-sdf
+    args:
+      data_root: ./data/dvf_png/font_pngs/test
+      img_res: 128
+      char_list: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51]
+      include_lower_case: true
+      val: true
+      use_cache: false
+      valid_list: ./data/dvf_png/test_valid.txt
+  batch_size: 16
+  shuffle: true
+
+model:
+  name: occ-dual-channel
+  args:
+    use_occ: true
+    occ_warmup: 4
+    sidelength: 256
+    detach_img_branch: false
+    dis_cal:
+      name: batched-curve-to-dis
+      args:
+        ds:
+          name: analytic-df
+          args:
+            n_control_points: 3
+        sidelength: 256
+
+    encoder:
+      name: light-img-encoder
+      args:
+        z_channels: 256
+        in_channels: 1
+        ch: 16
+        ch_mult: [1,2,2,4,4,8,16,16]
+        double_z: false
+        num_res_blocks: 1
+        attn_resolutions: [32]
+        dropout: 0.0
+        resolution: 128
+
+    decoder:
+      name: z-to-curve
+      args:
+        z_dim: 256
+        n_points: 3
+        n_curves: 4
+        n_prims: 12
+        hidden_dim: 256
+        hidden_layers: 2
+
+    img_decoder:
+      name: light-img-decoder
+      args:
+        z_channels: 256
+        ch: 16
+        out_ch: 1
+        ch_mult: [1,1,2,2,4,4,8,8,16]  # num_down = len(ch_mult)-1
+        num_res_blocks: 1
+        attn_resolutions: [64]
+        dropout: 0.0
+        resolution: 256
+
+optimizer:
+  name: Adam
+  args:
+    lr: 1.e-4
+    betas: [0.9, 0.999]
+
+scheduler:
+  name: CosineAnnealingWarmRestarts
+  args:
+    T_0: 32 
+    T_mult: 2
+    eta_min: 1.e-5
+    verbose: True
+
+loss:
+  name: list-loss
+  args: 
+    loss_list:
+    - 
+      name: sdf-loss
+      args:
+        udf_warmup: 8
+        lams:
+          occ: 0.5
+          l1: 1
+    - 
+      name: img-loss
+      args:
+        lams:
+          l2: 1
+          pct: 1
+
+
+epoch_max: 200
+epoch_val: 1
+epoch_save: 1
+run_step: true
+load_optimizer: false

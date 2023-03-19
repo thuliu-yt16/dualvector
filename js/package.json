@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "paper": "^0.12.15",
+    "paper-jsdom": "^0.12.15"
+  }
+}
