@@ -7,12 +7,10 @@ Code release for DualVector: Unsupervised Vector Font Synthesis with Dual-Part R
 In general, other versions of the packages listed below may also work, but are not tested. 
 
 Important python related packages
-
 - python 3.8
 - pytorch 1.9.0
 - torchvision 0.10.0
 - [diffvg](https://github.com/BachiLi/diffvg) (Note: please first replace the original `diffvg/pydiffvg/save_svg.py` with [DeepVecFont's save_svg.py](https://github.com/yizhiwang96/deepvecfont/blob/master/data_utils/save_svg.py), and the original `parse_svg.py` with [our parse_svg.py](./eval/diffvg_parse_svg.py) and then install.)
-
 - [svgpathtools](https://github.com/mathandy/svgpathtools)
 
 We recommend you to install these dependencies with `pip`.  You can refer to `requirements.txt` for all the packages' version but some of them may not be used in code. 
@@ -34,7 +32,7 @@ npm install
 
 Please download it from [here](https://drive.google.com/file/d/1quWgaU7-QiLQ8TNGuGnTJPFsGf4um0pK/view?usp=share_link) and extract it to `data/dvf_png`.
 
-The dataset is the same as that used in DeepVecFont, a subset from [SVG-VAE](https://github.com/magenta/magenta/tree/main/magenta/models/svg_vae).  But because some of the font's lowercase letters were not fully contained by the image, we re-rendered them to images with a resolution of 1536*1024. The training data required for [Multi-Implicits](https://github.com/preddy5/multi_implicit_fonts) is also included.
+The dataset is the same as that used in [DeepVecFont](https://github.com/yizhiwang96/deepvecfont), a subset from [SVG-VAE](https://github.com/magenta/magenta/tree/main/magenta/models/svg_vae).  But because some of the font's lowercase letters were not fully contained by the image, we re-rendered them to images with a resolution of 1536*1024. The training data required for [Multi-Implicits](https://github.com/preddy5/multi_implicit_fonts) is also included.
 
 ## Run
 
