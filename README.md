@@ -1,6 +1,10 @@
 # DualVector
 
+OpenAccess[[pdf](https://openaccess.thecvf.com/content/CVPR2023/papers/Liu_DualVector_Unsupervised_Vector_Font_Synthesis_With_Dual-Part_Representation_CVPR_2023_paper.pdf)][[supp](https://openaccess.thecvf.com/content/CVPR2023/supplemental/Liu_DualVector_Unsupervised_Vector_CVPR_2023_supplemental.zip)]
+Arxiv[[pdf](https://arxiv.org/abs/2305.10462)]
+
 Code release for DualVector: Unsupervised Vector Font Synthesis with Dual-Part Representation (CVPR 2023)
+
 
 ## Requirements
 
@@ -120,3 +124,16 @@ python run_metrics.py --name ours --pred_lowercase --pred save/test_recon/refine
 ```
 
 The result will be saved at `eval/eval/save/`.
+
+# Citation
+If you find DualVector helpful, please consider citing:
+```
+@InProceedings{dualvector,
+    author    = {Liu, Ying-Tian and Zhang, Zhifei and Guo, Yuan-Chen and Fisher, Matthew and Wang, Zhaowen and Zhang, Song-Hai},
+    title     = {DualVector: Unsupervised Vector Font Synthesis With Dual-Part Representation},
+    booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    month     = {June},
+    year      = {2023},
+    pages     = {14193-14202}
+}
+```
