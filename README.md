@@ -7,7 +7,7 @@ Code release for DualVector: Unsupervised Vector Font Synthesis with Dual-Part R
 
 **Update** 
 
-- 2023.10.11: We release the pretrained models for font [reconstruction](https://drive.google.com/file/d/1hJ_7xAtOXyrDEaq53cGtViFwCQOu_212/view?usp=drive_link) and [generation](https://drive.google.com/file/d/1xF-Pk7eTAZGCS9ST7a2cb-dyfer1x6gN/view?usp=drive_link).
+- 2023.10.11: We release the pretrained models for font [reconstruction](https://drive.google.com/file/d/1hJ_7xAtOXyrDEaq53cGtViFwCQOu_212/view?usp=sharing) and [generation](https://drive.google.com/file/d/1xF-Pk7eTAZGCS9ST7a2cb-dyfer1x6gN/view?usp=sharing).
 
 
 ## Requirements
@@ -44,7 +44,7 @@ The dataset is the same as that used in [DeepVecFont](https://github.com/yizhiwa
 
 ## Pretrained Model
 
-We provide the pretrained models for font [reconstruction](https://drive.google.com/file/d/1hJ_7xAtOXyrDEaq53cGtViFwCQOu_212/view?usp=drive_link) and [generation](https://drive.google.com/file/d/1xF-Pk7eTAZGCS9ST7a2cb-dyfer1x6gN/view?usp=drive_link). You can download them and replace the checkpoint path following with their path.
+We provide the pretrained models for font [reconstruction](https://drive.google.com/file/d/1hJ_7xAtOXyrDEaq53cGtViFwCQOu_212/view?usp=sharing) and [generation](https://drive.google.com/file/d/1xF-Pk7eTAZGCS9ST7a2cb-dyfer1x6gN/view?usp=sharing). You can download them and replace the checkpoint path following with their path.
 
 ## Run
 
