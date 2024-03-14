@@ -5,6 +5,10 @@ Arxiv[[pdf](https://arxiv.org/abs/2305.10462)]
 
 Code release for DualVector: Unsupervised Vector Font Synthesis with Dual-Part Representation (CVPR 2023)
 
+**Update** 
+
+- 2023.10.11: We release the pretrained models for font [reconstruction](https://drive.google.com/file/d/1hJ_7xAtOXyrDEaq53cGtViFwCQOu_212/view?usp=sharing) and [generation](https://drive.google.com/file/d/1xF-Pk7eTAZGCS9ST7a2cb-dyfer1x6gN/view?usp=sharing).
+
 
 ## Requirements
 
@@ -37,6 +41,10 @@ npm install
 Please download it from [here](https://drive.google.com/file/d/1quWgaU7-QiLQ8TNGuGnTJPFsGf4um0pK/view?usp=share_link) and extract it to `data/dvf_png`.
 
 The dataset is the same as that used in [DeepVecFont](https://github.com/yizhiwang96/deepvecfont), a subset from [SVG-VAE](https://github.com/magenta/magenta/tree/main/magenta/models/svg_vae).  But because some of the fonts' lowercase letters are not fully contained by the images, we re-render them to images with a resolution of 1536*1024. The training data required for [Multi-Implicits](https://github.com/preddy5/multi_implicit_fonts) is also included.
+
+## Pretrained Model
+
+We provide the pretrained models for font [reconstruction](https://drive.google.com/file/d/1hJ_7xAtOXyrDEaq53cGtViFwCQOu_212/view?usp=sharing) and [generation](https://drive.google.com/file/d/1xF-Pk7eTAZGCS9ST7a2cb-dyfer1x6gN/view?usp=sharing). You can download them and replace the checkpoint path following with their path.
 
 ## Run
 
