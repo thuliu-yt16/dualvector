@@ -15,7 +15,7 @@ Important python related packages
 - pytorch 1.9.0
 - torchvision 0.10.0
 - [diffvg](https://github.com/BachiLi/diffvg) (Note: please first replace the original `diffvg/pydiffvg/save_svg.py` with [DeepVecFont's save_svg.py](https://github.com/yizhiwang96/deepvecfont/blob/master/data_utils/save_svg.py), and the original `parse_svg.py` with [our parse_svg.py](./eval/diffvg_parse_svg.py) and then install.)
-- [svgpathtools](https://github.com/mathandy/svgpathtools)
+- [svgpathtools](https://github.com/mathandy/svgpathtools) (We use version 1.4.4 and make several modifications. Please replace the source code with [our modified version](./eval/svgpathtools_modified). Basically we add a `forceZ` option to ensure a closed path.)
 
 We recommend you to install these dependencies with `pip`.  You can refer to `requirements.txt` for all the packages' version but some of them may not be used in code. 
 
